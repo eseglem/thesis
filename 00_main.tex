@@ -1,0 +1,191 @@
+%%
+%% GMU LaTeX MS Thesis Format Template
+%%
+%% Developed by:
+%%      Daniel O. Awduche and Christopher A. St. Jean
+%%      Communications and Networking Lab
+%%      Dept. of Electrical and Computer Engineering
+%%
+%% Notes on usage can be found in the accompanying USAGE_NOTES.txt file.
+%%
+%%**********************************************************************
+%% Legal Notice:
+%% This code is offered as-is without any warranty either
+%% expressed or implied; without even the implied warranty of
+%% MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE!
+%% User assumes all risk.
+%% In no event shall any contributor to this code be liable for any damages
+%% or losses, including, but not limited to, incidental, consequential, or
+%% any other damages, resulting from the use or misuse of any information
+%% contained here.
+%%**********************************************************************
+%%
+%% $Id: GMU_thesis_template.tex,v 1.16 2007/05/02 02:20:11 Owner Exp $
+%%
+
+\documentclass[11 pt]{report}
+
+%%  The file ``gmuthesis.sty''  is the GMU latex style file and
+%%   should be placed in the same directory as your LaTeX files
+\usepackage{gmuthesis}
+
+%%
+%% other packages that need to be loaded, by template
+%%
+\usepackage{graphicx}                    %   for imported graphics
+\usepackage{amsmath}                     %%
+\usepackage{amsfonts}                    %%  for AMS mathematics
+\usepackage{amssymb}                     %%
+\usepackage{amsthm}                      %%
+\usepackage[normalem]{ulem}              %   a nice standard underline package
+\usepackage[noadjust,verbose,sort]{cite} %   arranges reference citations neatly
+\usepackage{setspace}                    %   for line spacing commands
+
+%% The file ``mythesisabbrev.sty'' is an (optional) personalized file that
+%% may contain any and all LaTeX command (re)definitions that will be used
+%% throughout the document
+\usepackage{mythesisabbrev}
+
+\beforedoc
+
+\begin{document}
+
+%% In this section, all of the user-specific fields to be used in the
+%% title pages are set
+\title{On Privacy in Spatio-Temporal Data:\\User Identification Using Geotagged Social Media}
+\onelinetitle{On Privacy in Spatio-Temporal Data: User Identification Using Geotagged Social Media}
+\author{Erik Seglem}
+\degree{Master of Science}
+\subject{Geoinformatics and Geospatial Intelligence}
+\doctype{Thesis}
+\dept{Geography and GeoInformation Science}
+
+\firstdeg{Bachelor of Arts}
+\firstdegschool{American Military University}
+\firstdegyear{2014}
+
+\degreeyear{2017}
+
+% Note: semester name should be written in its full-form. For example, Fall Semester, not just Fall.
+\degreesemester{Spring Semester}
+
+\advisor{Dr. Andreas Züfle}
+
+\firstmember{Dr. Dieter Pfoser}
+
+\secondmember{Dr. David Wong}
+
+\depthead{Dr. Anthony Stefanidis}
+
+\deanresearch{Dr. Donna M. Fox}
+
+\programdirector{Dr. Peggy Agouris}
+
+%%
+%% Introductory pages
+%%
+
+% Note: The signature sheet is set according to the requirements of the Volgenau School of
+% Information Technology and Engineering. If your college/school requirement is different,
+% please make appropriate changes in the "signaturepage" section of gmudissertation.sty file.
+\signaturepage
+
+\titlepage
+
+% copyright technically optional but should be included in to avoid potential pagination problems
+\copyrightpage
+
+%%
+%% Dedication page
+%%
+
+\dedicationpage
+
+\noindent I dedicate this thesis to my loving wife, for putting up with all of the time spent on this thesis. Her never ending support was key to its completion.
+
+%%
+%% Acknowledgements
+%%
+
+\acknowledgementspage
+
+\noindent
+I would like to thank the following people who made this possible:
+Andreas Z\"ufle, Jan Stutzki, Felix Borutta, Evgheniy Faerman, and Matthias Schubert.
+
+%%
+%% Table of contents, list of tables, and lists of figures
+%%
+
+\tableofcontents
+
+\listoftables
+
+\listoffigures
+
+%%
+%% Abstract
+%%
+\abstractpage
+Trajectory data is among the most sensitive data regarding the privacy of the observed users. To collect trajectory data, mobile phones and other mobile devices constantly track their positions. This work examines the question whether publicly available spatio-temporal user data can be used to link newly observed trajectory data to known user profiles. For this study, publicly available location information about Twitter users is used to construct spatio-temporal user profiles describing a user's movement in space and time. It shows how to use these profiles to match a new trajectory to their user with high accuracy. Furthermore, it shows how to link users of two different trajectory data sets.
+
+For this case study, 15,989 of the most prolific Twitter users in London in 2014 are considered. The experimental results show that the classification approach allows to correctly identify 98~\% of the most prolific 500 of these users. Furthermore, it can correctly identify more than 50~\% of any users by using three locations of these users, rather than their whole trajectory. This alarming result shows that spatio-temporal data is highly discriminative, thus putting the privacy of hundreds of millions of geo-social network users at a risk. It further shows that it can correctly match most users of Instagram to users of Twitter.
+\clearpage
+
+%% Be sure to leave a line of whitespace immediately before this line!!!!!
+%% (If this comment segment runs together with the preceeding text, you might
+%%  see the second page of the abstract numbered "0".)
+%%
+%% If the abstract is more than one page, then place this line PRECISELY
+%% at the page break; otherwise, comment it out.  (See note about this line
+%% in the usage notes.)
+%%
+%%\abstractmultiplepage
+%%
+%%The second page of the abstract
+
+%%
+%%  the main body of the dissertation
+%%
+
+\startofchapters
+
+%% include the chapters one by one (or paste the chapter text in directly if desired)
+\include{01_introduction}
+\include{02_related_works}
+\include{03_definitions}
+\include{04_user_identification}
+\include{05_experiments}
+\include{06_scalability}
+\include{07_user_linkage}
+\include{90_conclusion}
+\include{91_additional_research}
+
+%%
+%%  bibliography
+%%
+
+%% list all of the BibTeX files here for the WinEdt project (if applicable)
+%GATHER{bibfile.bib}
+
+%% any bibliography style can be used, but IEEEtran.bst is ideally suited to
+%% electrical engineering references
+
+%% include the following directives if there are any appendices
+\appendix
+\appendixeqnumbering
+\include{99a_appendix}
+\include{99b_appendix}
+
+\bibliographystyle{IEEEtranN}
+\bibliography{bibfile}
+
+%%
+%% curriculum vitae
+%%
+\cvpage
+
+\noindent
+Erik L. Seglem will soon to be a PhD. student in the Earth Systems and Geoinformation Sciences program. He received a Bachelors of Arts in Intelligence Studies from American Military University in August of 2014, and is graduating from George Mason University with a Master’s of Science in Geoinformatics and Geospatial Intelligence.  In November of 2016 he won First Place in the Graduate category of the Student Research Poster Competition at GMU’s GIS Day. With over 9 years of experience in GIS, including 5 years in the Marine Corps as a Geospatial Analyst, and 4 years as a Geospatial Software Engineer at DigitalGlobe Inc. He has taken a new position at BigBear Inc, where he will be focusing on cloud technology and big data as it applies to geospatial problems.
+
+\end{document}

@@ -1,0 +1,10 @@
+%!TEX root = ./00_main.tex
+
+\chapter[Conclusion]{Conclusion}
+\label{sec:conclusion}
+In this work, the challenge of identifying users in a spatio-temporal database was approached. This approach uses historic trajectories of a user to learn their motion in space and time, by proposing various feature extraction and similarity search methods. Using a 12-week dataset of Tweets in the London region, the experimental results show that it is possible to map a trajectory to a ground-truth user with extremely high accuracy. This raises various concerns and opportunities:
+\begin{itemize}
+  \item {\bf The Threat} of loss of privacy: Trajectories of real people are publicly available. Given only few observations of an individual. For example, one person inadvertently appearing in the background of another person's Facebook images, then identifying this user in a trajectory database, and linking them to additional data, such as username or real name.
+  \item {\bf The Potential} through record linkage of trajectory databases. For example, joining the personal interests in locations (such as restaurants, bars, cafes) from a LBSN with textual thoughts of a user from a micro-blog. Thus, a micro-blog tweet from user $u$ such as {\bf ``W00T, I'm going to George Mason University!''}, might be used to recommend restaurants to $u$ by mining their restaurant preferences using their check-ins in the LBSN.
+  \item {\bf The Challenge} of privacy preservation by trajectory obfuscation and other means. By learning the characteristics that make a trajectory matchable to its user, techniques to hide particularly descriptive and discriminative observations from the public trajectory can be developed.
+\end{itemize}

@@ -1,0 +1,131 @@
+% !TeX root = 00_main.tex
+
+% N.B.: an appendix chapter starts with "appchapter" instead of "chapter"
+%
+% The first argument in [ ] is the title as displayed in the table of contents
+% The second argument is the title as displayed here.  Use \\ as appropriate in
+%   this title to get desired line breaks
+\appchapter[Metric Accuracies]{Metric Accuracies}
+
+The following tables include the accuracies for all metrics attempted, on the 500 user dataset, in order to discern which would be the best to start with in the experiments of this work. This was an exhaustive search of all possible combinations offered within scikit-learn \cite{scikit-learn}.
+
+
+\begin{table}
+  \centering
+  \caption{Accuracy for all Metrics (k = 1)}
+  \begin{tabular}{|l|l|l|l|}
+    \hline
+    {\bf Metric} & {\bf Index} & {\bf Accuracy} & {\bf Std. Dev.} \\\hline
+    euclidean & kd tree & 0.838188 & 0.044796 \\\hline
+    manhattan & kd tree & 0.826809 & 0.057972 \\\hline
+    chebyshev & kd tree & 0.820695 & 0.039398 \\\hline
+    euclidean & ball tree & 0.837978 & 0.044938 \\\hline
+    manhattan & ball tree & 0.827230 & 0.058734 \\\hline
+    chebyshev & ball tree & 0.820695 & 0.038600 \\\hline
+    hamming & ball tree & 0.466513 & 0.052677 \\\hline
+    canberra & ball tree & 0.723581 & 0.086002 \\\hline
+    braycurtis & ball tree & 0.891077 & 0.044141 \\\hline
+    jaccard & ball tree & 0.840933 & 0.054737 \\\hline
+    dice & ball tree & 0.840933 & 0.054737 \\\hline
+    kulsinski & ball tree & 0.751595 & 0.063372 \\\hline
+    rogerstanimoto & ball tree & 0.731370 & 0.061987 \\\hline
+    russellrao & ball tree & 0.625803 & 0.074475 \\\hline
+    sokalmichener & ball tree & 0.731370 & 0.061987 \\\hline
+    sokalsneath & ball tree & 0.840933 & 0.054737 \\\hline
+    euclidean & brute & 0.838188 & 0.044796 \\\hline
+    manhattan & brute & 0.827019 & 0.058927 \\\hline
+    chebyshev & brute & 0.820274 & 0.038897 \\\hline
+    hamming & brute & 0.462506 & 0.048503 \\\hline
+    canberra & brute & 0.723791 & 0.086601 \\\hline
+    braycurtis & brute & 0.891077 & 0.044141 \\\hline
+    jaccard & brute & 0.342842 & 0.101260 \\\hline
+    dice & brute & 0.840933 & 0.055508 \\\hline
+    kulsinski & brute & 0.751595 & 0.064149 \\\hline
+    rogerstanimoto & brute & 0.729263 & 0.064473 \\\hline
+    russellrao & brute & 0.622429 & 0.071010 \\\hline
+    sokalmichener & brute & 0.729263 & 0.064473 \\\hline
+    sokalsneath & brute & 0.840933 & 0.055508 \\\hline
+    cosine & brute & 0.914248 & 0.029629 \\\hline
+  \end{tabular}
+  \tableSpace
+\end{table}
+
+\begin{table}
+  \centering
+  \caption{Accuracy for all Metrics (k = 3)}
+  \begin{tabular}{|l|l|l|l|}
+    \hline
+    {\bf Metric} & {\bf Index} & {\bf Accuracy} & {\bf Std. Dev.} \\\hline
+    euclidean & kd tree & 0.827866 & 0.053549 \\\hline
+    manhattan & kd tree & 0.817327 & 0.062069 \\\hline
+    chebyshev & kd tree & 0.813746 & 0.042208 \\\hline
+    euclidean & ball tree & 0.827866 & 0.053549 \\\hline
+    manhattan & ball tree & 0.818170 & 0.062555 \\\hline
+    chebyshev & ball tree & 0.813957 & 0.041596 \\\hline
+    hamming & ball tree & 0.464402 & 0.049754 \\\hline
+    canberra & ball tree & 0.710095 & 0.081823 \\\hline
+    braycurtis & ball tree & 0.885812 & 0.046944 \\\hline
+    jaccard & ball tree & 0.849785 & 0.065483 \\\hline
+    dice & ball tree & 0.850628 & 0.065584 \\\hline
+    kulsinski & ball tree & 0.765713 & 0.059737 \\\hline
+    rogerstanimoto & ball tree & 0.717679 & 0.072936 \\\hline
+    russellrao & ball tree & 0.633812 & 0.067216 \\\hline
+    sokalmichener & ball tree & 0.717679 & 0.072936 \\\hline
+    sokalsneath & ball tree & 0.849363 & 0.064541 \\\hline
+    euclidean & brute & 0.827866 & 0.053549 \\\hline
+    manhattan & brute & 0.818170 & 0.061136 \\\hline
+    chebyshev & brute & 0.814378 & 0.040797 \\\hline
+    hamming & brute & 0.459136 & 0.055243 \\\hline
+    canberra & brute & 0.709674 & 0.081047 \\\hline
+    braycurtis & brute & 0.885812 & 0.046944 \\\hline
+    jaccard & brute & 0.349590 & 0.107582 \\\hline
+    dice & brute & 0.849995 & 0.065003 \\\hline
+    kulsinski & brute & 0.765502 & 0.060497 \\\hline
+    rogerstanimoto & brute & 0.717048 & 0.076714 \\\hline
+    russellrao & brute & 0.630017 & 0.065846 \\\hline
+    sokalmichener & brute & 0.717048 & 0.076714 \\\hline
+    sokalsneath & brute & 0.848731 & 0.064078 \\\hline
+    cosine & brute & 0.906244 & 0.039755 \\\hline
+  \end{tabular}
+  \tableSpace
+\end{table}
+
+\begin{table}
+  \centering
+  \caption{Accuracy for all Metrics (k = 5)}
+  \begin{tabular}{|l|l|l|l|}
+    \hline
+    {\bf Metric} & {\bf Index} & {\bf Accuracy} & {\bf Std. Dev.} \\\hline
+    euclidean & kd tree & 0.824074 & 0.055560 \\\hline
+    manhattan & kd tree & 0.815642 & 0.061258 \\\hline
+    chebyshev & kd tree & 0.811429 & 0.045801 \\\hline
+    euclidean & ball tree & 0.824074 & 0.055560 \\\hline
+    manhattan & ball tree & 0.816696 & 0.062219 \\\hline
+    chebyshev & ball tree & 0.811219 & 0.046123 \\\hline
+    hamming & ball tree & 0.460613 & 0.055359 \\\hline
+    canberra & ball tree & 0.690076 & 0.067420 \\\hline
+    braycurtis & ball tree & 0.887290 & 0.053699 \\\hline
+    jaccard & ball tree & 0.852103 & 0.064630 \\\hline
+    dice & ball tree & 0.854210 & 0.061707 \\\hline
+    kulsinski & ball tree & 0.764875 & 0.073723 \\\hline
+    rogerstanimoto & ball tree & 0.702083 & 0.064854 \\\hline
+    russellrao & ball tree & 0.660578 & 0.072486 \\\hline
+    sokalmichener & ball tree & 0.702083 & 0.064854 \\\hline
+    sokalsneath & ball tree & 0.851261 & 0.064230 \\\hline
+    euclidean & brute & 0.823231 & 0.054043 \\\hline
+    manhattan & brute & 0.814588 & 0.060960 \\\hline
+    chebyshev & brute & 0.810586 & 0.045200 \\\hline
+    hamming & brute & 0.463354 & 0.063333 \\\hline
+    canberra & brute & 0.691129 & 0.065973 \\\hline
+    braycurtis & brute & 0.887079 & 0.053926 \\\hline
+    jaccard & brute & 0.350008 & 0.099094 \\\hline
+    dice & brute & 0.854842 & 0.062671 \\\hline
+    kulsinski & brute & 0.765295 & 0.071434 \\\hline
+    rogerstanimoto & brute & 0.701664 & 0.069232 \\\hline
+    russellrao & brute & 0.636137 & 0.072479 \\\hline
+    sokalmichener & brute & 0.701664 & 0.069232 \\\hline
+    sokalsneath & brute & 0.852525 & 0.066063 \\\hline
+    cosine & brute & 0.901398 & 0.034491 \\\hline
+  \end{tabular}
+  \tableSpace
+\end{table}

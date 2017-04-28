@@ -1,0 +1,44 @@
+% !TeX root = 00_main.tex
+
+\chapter[Problem Definition]{Problem Definition}
+\label{sec:probdef}
+In this work, the question of to what extent a set of spatio-temporal observations, such as geotagged tweets, are sufficient to derive spatial user profiles for the observed users and reliably link spatial trajectories of unknown users to one of the known user profiles is answered. Therefore, this section will define terms and notations, and formally define the problem of user identification using trajectory data.
+
+In this paper, spatio-temporal data is considered. That is data of users annotated with a geolocation and a timestamp, such as obtained from Twitter.
+\begin{definition}[Spatio-Temporal Database]
+Let $\mathcal{U}$ denote a set of unique user identifiers, let $\mathcal{S}$ be a set of spatial regions, and let $\mathcal{T}$ denote a time domain.
+A \emph{spatio-temporal database} $\DB\subseteq \mathcal{U}\times \mathcal{S}\times \mathcal{T}$ is a collection of triples $(id\in\mathcal{U},s\in\mathcal{S},t\in\mathcal{T})$. Each triple $(u,s,t)\in\DB$ is called an observation.
+\end{definition}
+Furthermore, a trajectory is defined as a sequence of location and time pairs.
+\begin{definition}[Trajectory]
+A trajectory $tr\subseteq \mathcal{S}\times\mathcal{T}$ is a collection of pairs $(s\in\mathcal{S},t\in\mathcal{T})$.
+\end{definition}
+
+To build a user specific mobility pattern, the data is temporally partitioned $\DB$ into equal sized time intervals called epochs. For each epoch, the set of observations of a specific user is called a trajectory, formally defined as follows.
+\begin{definition}[Database Trajectories]
+Let $\DB$ be a spatio-temporal database. Let $\mathcal{E}=\{e_1,...e_n\}$ be a partitioning of $\mathcal{T}$ into $n$ temporal intervals denoted as epochs. For each epoch $e\in\mathcal{E}$, and each user $u$, the trajectory
+$$
+\DB(u,e):=\{(u^\prime,s,t)\in\DB|u^\prime=u, t\in e\},
+$$
+is called the database trajectory of user $id$ during epoch $e$.
+\end{definition}
+
+
+In the remainder of this paper, trajectory models are introduced to capture the motion of a user in space and time. The models are derived from the set of all trajectories of a user, called their trajectory profile formally defined as follows.
+\begin{definition}[Trajectory Profile]
+Let $\DB$ be a spatio-temporal database, let $u\in\mathcal{U}$ be a user and let $\mathcal{E}$ be a temporal partitioning of $\DB$ into $n$ epochs.
+The trajectory profile $\mathcal{P}(u)$ the set of all trajectories of $u$, i.e.,
+$$
+\mathcal{P}(u)=\{D(u^\prime,e)|u^\prime=u,e\in\mathcal{E}\}.
+$$
+\end{definition}
+The main challenge of this paper is to identify the trajectory of an unknown user.
+\begin{definition}[User Identification]
+Let $\DB$ be a spatio-temporal database and let $Q\subseteq \mathcal{S}\times\mathcal{T}$ be a trajectory of an unknown user $x$. The task of user identification is to predict the unknown user $u$ of $Q$ given $\DB$. The function
+$$
+\mathcal{I}:\mathcal{P}(\mathcal{S}\times\mathcal{T})\mapsto \mathcal{U},
+$$
+maps a trajectory $Q$ to user $x$ as a user identification function.
+\end{definition}
+Thus, user identification is a classification task mapping a trajectory to its unknown user.
+To train a user identification function $I(Q)$, the next section presents the classification approach, which uses the trajectories in $\DB$ as a training set, in order to predict the user of a new trajectory $Q\notin\DB$.
